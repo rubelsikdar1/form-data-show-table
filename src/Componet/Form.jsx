@@ -1,11 +1,35 @@
 import createContext from "../Context/createContext";
 import "./Form.css";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 
 const Form = () => {
     const {setFormData}=useContext(createContext);
     // setFormData("this is checks");
+
+
+
+
+
+const [oc, setOc]=useState("");
+
+const check =(e)=>{
+  return(
+    setOc(e.target.value) 
+  )
+}
+console.log(oc)
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <div className="widthis border border-white-50 p-4 rounded-3 Regular shadow">
@@ -68,7 +92,7 @@ const Form = () => {
             <label htmlFor="inputCity" className="form-label">
               City
             </label>
-            <input type="text" className="form-control" id="inputCity" />
+            <input type="text" onChange={check} className="form-control" id="inputCity" />
           </div>
           <div className="col-md-4">
             <label htmlFor="inputState" className="form-label">
@@ -99,7 +123,7 @@ const Form = () => {
             </div>
           </div>
           <div className="col-12">
-            <button type="submit" className="btn btn-primary">
+            <button disabled={oc === ""}  type="submit" className="btn btn-primary">
               Sign in
             </button>
           </div>
