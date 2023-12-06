@@ -8,9 +8,6 @@ const Form = () => {
     // setFormData("this is checks");
 
 
-
-
-
 const [oc, setOc]=useState("");
 
 const check =(e)=>{
@@ -18,15 +15,6 @@ const check =(e)=>{
     setOc(e.target.value) 
   )
 }
-console.log(oc)
-
-
-
-
-
-
-
-
 
 
 
